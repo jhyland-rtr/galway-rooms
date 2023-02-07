@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <style>
+      iframe {
+        width: 400px;
+        height: 650px;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>PODS</h2>
+    <iframe id="pod"></iframe>
+    <iframe id="202"></iframe>
+    <h2>4 People</h2>
+    <iframe id="201"></iframe>
+    <iframe id="301"></iframe>
+    <h2>6-8 People</h2>
+    <iframe id="101"></iframe>
+    <iframe id="102"></iframe>
+    <h2>10+ People</h2>
+    <iframe id="collab"></iframe>
+    <iframe id="kitchen"></iframe>
+
+    <script>
+      const calendars = [
+        { room: "pod", src: "renttherunway.com_1887so54raivchvcj3akeh7cji18k6gb6oqj6d1p68o3cd1p60%40resource.calendar.google.com" },
+        { room: "202", src: "c_188ev2jvtb24egfjl8n1fu4t3r8js%40resource.calendar.google.com" },
+        { room: "201", src: "renttherunway.com_188e40ki89g48i5rjq79g0jnlld8a6gb6oq3gd1j6opj2cpj6c%40resource.calendar.google.com" },
+        { room: "301", src: "renttherunway.com_188d9hu9iajscgsmi5h1ckr3dhcve%40resource.calendar.google.com" },
+        { room: "101", src: "renttherunway.com_188cofg30gf20haljl7l93rf2dt106ga6goj6dpp6gq38chl%40resource.calendar.google.com" },
+        { room: "102", src: "renttherunway.com_1886s4d4otklmidbis6tq71hv33oo6gb6goj4dpi64r36c9i60%40resource.calendar.google.com" },
+        { room: "collab", src: "c_1882s5gdu6sgujofg5cg44n30ie54%40resource.calendar.google.com" },
+        { room: "kitchen", src: "renttherunway.com_1880bl4j6kp2qjfflkvagttb7ohm6%40resource.calendar.google.com"}
+
+      ];
+      var now = new Date();
+      var todayDatestamp = now.toISOString().slice(0,10).replace(/-/g,"");
+
+      calendars.forEach(calendar => {
+        document.getElementById(calendar.room).src =
+          "https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FDublin&mode=DAY&showPrint=0&showTabs=0&showCalendars=0&dates=" +
+          todayDatestamp +
+          "/" +
+          todayDatestamp +
+          "&showDate=0&showNav=0&showTitle=1&showTz=0&src=" +
+          calendar.src;
+      });
+    </script>
+  </body>
+</html>
