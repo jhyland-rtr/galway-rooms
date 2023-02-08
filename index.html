@@ -1,5 +1,6 @@
 <html>
   <head>
+    <title>Galway Rooms</title>
     <style>
       iframe {
         width: 400px;
@@ -34,8 +35,8 @@
         { room: "kitchen", src: "renttherunway.com_1880bl4j6kp2qjfflkvagttb7ohm6%40resource.calendar.google.com"}
 
       ];
-      var now = new Date();
-      var todayDatestamp = now.toISOString().slice(0,10).replace(/-/g,"");
+      const now = new Date();
+      const todayDatestamp = now.toISOString().slice(0,10).replace(/-/g,"");
 
       calendars.forEach(calendar => {
         document.getElementById(calendar.room).src =
