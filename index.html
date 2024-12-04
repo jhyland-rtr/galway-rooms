@@ -2,29 +2,52 @@
   <head>
     <title>Galway Rooms</title>
     <style>
+      body {
+        margin: 20px 0;
+        background: #f0f4f8;
+      }
+
+      h2 {
+        margin-left: 20px;
+      }
+
+      .group {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
       iframe {
-        width: 400px;
+        width: 50%;
         height: 650px;
         border: 0;
+        margin-bottom: 30px;
       }
     </style>
   </head>
   <body>
     <h2>PODS</h2>
-    <iframe id="podfather"></iframe>
-    <iframe id="sparch"></iframe>
-    <iframe id="notions"></iframe>
-    <iframe id="202"></iframe>
-    <iframe id="just-the-two-of-us"></iframe>
+    <div class="group">
+        <iframe id="podfather"></iframe>
+        <iframe id="sparch"></iframe>
+        <iframe id="notions"></iframe>
+        <iframe id="202"></iframe>
+        <iframe id="just-the-two-of-us"></iframe>
+    </div>
     <h2>4 People</h2>
-    <iframe id="201"></iframe>
-    <iframe id="301"></iframe>
+    <div class="group">
+        <iframe id="201"></iframe>
+        <iframe id="301"></iframe>
+    </div>
     <h2>6-8 People</h2>
-    <iframe id="101"></iframe>
-    <iframe id="102"></iframe>
+    <div class="group">
+        <iframe id="101"></iframe>
+        <iframe id="102"></iframe>
+    </div>
     <h2>10+ People</h2>
-    <iframe id="collab"></iframe>
-    <iframe id="kitchen"></iframe>
+    <div class="group">
+        <iframe id="collab"></iframe>
+        <iframe id="kitchen"></iframe>
+    </div>
 
     <script>
       const calendars = [
@@ -46,7 +69,7 @@
 
       calendars.forEach(calendar => {
         document.getElementById(calendar.room).src =
-          "https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FDublin&mode=DAY&showPrint=0&showTabs=0&showCalendars=0&dates=" +
+          "https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FDublin&mode=WEEK&showPrint=0&showTabs=0&showCalendars=0&dates=" +
           todayDatestamp +
           "/" +
           todayDatestamp +
